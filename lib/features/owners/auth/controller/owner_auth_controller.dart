@@ -1,17 +1,117 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pyroapp/core/routes/route_names.dart';
+import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/core/utils/validator_utils.dart';
-import 'package:pyroapp/features/shared/widgets/bottomsheets/accountcreatedbottomsheet.dart';
+import 'package:pyroapp/features/owners/auth/view/widgets/bottomsheets/accountcreatedbottomsheet.dart';
 
 class OwnerAuthController extends GetxController {
-  // Text Controllers
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
-  final forgetPasswordEmail = TextEditingController();
-  final nameController = TextEditingController();
+  /* ───────────────── TEXT CONTROLLERS ───────────────── */
 
-  // OTP Controller
-  final otp = ''.obs; // RxString
+  // LOGIN
+  final loginEmailController = TextEditingController();
+  final loginPasswordController = TextEditingController();
+
+  // REGISTER
+  final registerFullNameController = TextEditingController();
+  final registerEmailController = TextEditingController();
+  final registerPasswordController = TextEditingController();
+
+  // FORGOT PASSWORD
+  final forgotPasswordEmailController = TextEditingController();
+
+  // RESET PASSWORD
+  final resetNewPasswordController = TextEditingController();
+  final resetConfirmPasswordController = TextEditingController();
+
+  /* ───────────────── OTP STATE ───────────────── */
+  final RxString otp = ''.obs;
+
+  /* ───────────────── UI STATE ───────────────── */
+  bool isLogin = true;
+  bool rememberMe = false;
+  bool isLoading = false;
+
+  bool obscureLoginPassword = true;
+  bool obscureRegisterPassword = true;
+  bool obscureResetNewPassword = true;
+  bool obscureResetConfirmPassword = true;
+
+  /* ───────────────── ERROR STATE ───────────────── */
+
+  // LOGIN
+  String? loginEmailError;
+  String? loginPasswordError;
+
+  // REGISTER
+  String? registerNameError;
+  String? registerEmailError;
+  String? registerPasswordError;
+
+  // FORGOT PASSWORD
+  String? forgotPasswordEmailError;
+
+  // RESET PASSWORD
+  String? resetNewPasswordError;
+  String? resetConfirmPasswordError;
+
+  /* ───────────────── GETTERS (REAL-TIME VALIDITY) ───────────────── */
+
+  // LOGIN
+  bool get isLoginEmailValid =>
+      loginEmailError == null && loginEmailController.text.isNotEmpty;
+
+  // Initially true, only validated on login press
+  bool get isLoginPasswordValid =>
+      loginPasswordError ==
+      null; // password field will be validated on login press
+
+  bool get canLogin => isLoginEmailValid && isLoginPasswordValid;
+
+  // REGISTER
+  bool get isRegisterNameValid =>
+      registerNameError == null &&
+      registerFullNameController.text.trim().isNotEmpty;
+
+  bool get isRegisterEmailValid =>
+      registerEmailError == null &&
+      registerEmailController.text.trim().isNotEmpty;
+
+  bool get isRegisterPasswordValid =>
+      registerPasswordError == null &&
+      registerPasswordController.text.isNotEmpty;
+
+  bool get canRegister =>
+      isRegisterNameValid && isRegisterEmailValid && isRegisterPasswordValid;
+
+  // FORGOT PASSWORD
+  bool get isForgotPasswordEmailValid =>
+      forgotPasswordEmailError == null &&
+      forgotPasswordEmailController.text.isNotEmpty;
+
+  bool get canSubmitForgotPassword => isForgotPasswordEmailValid;
+
+  // RESET PASSWORD
+  bool get isResetNewPasswordValid =>
+      resetNewPasswordError == null &&
+      resetNewPasswordController.text.isNotEmpty;
+
+  bool get isResetConfirmPasswordValid =>
+      resetConfirmPasswordError == null &&
+      resetConfirmPasswordController.text.isNotEmpty;
+
+  bool get canResetPassword =>
+      isResetNewPasswordValid && isResetConfirmPasswordValid;
+
+  /* ───────────────── MODE TOGGLE ───────────────── */
+
+  void toggleAuthMode() {
+    isLogin = !isLogin;
+    clearErrors();
+    update();
+  }
+
+  /* ───────────────── OTP METHODS ───────────────── */
 
   void updateOtp(String value) {
     otp.value = value;
@@ -21,9 +121,8 @@ class OwnerAuthController extends GetxController {
     _setLoading(true);
     try {
       await Future.delayed(const Duration(seconds: 2));
-
       Get.bottomSheet(isScrollControlled: true, AccountCreatedBottomSheet());
-    } catch (e) {
+    } catch (_) {
       Get.snackbar('Error', 'OTP verification failed');
     } finally {
       _setLoading(false);
@@ -34,184 +133,207 @@ class OwnerAuthController extends GetxController {
     try {
       await Future.delayed(const Duration(seconds: 1));
       Get.snackbar('Success', 'OTP resent successfully');
-    } catch (e) {
+    } catch (_) {
       Get.snackbar('Error', 'Failed to resend OTP');
     }
   }
 
-  // State Variables
-  bool _isLogin = true;
-  bool _rememberMe = false;
-  bool _isLoading = false;
-  String? _emailError;
-  String? _passwordError;
-  String? _confirmPasswordError;
-  String? _nameError;
-  bool _obscureText = true;
+  /* ───────────────── VALIDATION METHODS ───────────────── */
 
-  // Getters
-  bool get isLogin => _isLogin;
-  bool get rememberMe => _rememberMe;
-  bool get isLoading => _isLoading;
-  String? get emailError => _emailError;
-  String? get passwordError => _passwordError;
-  String? get confirmPasswordError => _confirmPasswordError;
-  String? get nameError => _nameError;
-  bool get obscureText => _obscureText;
-
-  bool get isEmailValid =>
-      _emailError == null && emailController.text.isNotEmpty;
-  bool get isPasswordValid => _passwordError == null;
-  bool get isforgetPasswordEmailValid =>
-      _confirmPasswordError == null && forgetPasswordEmail.text.isNotEmpty;
-  bool get isNameValid => _nameError == null && nameController.text.isNotEmpty;
-
-  bool get canSubmit => _isLogin
-      ? isEmailValid && isPasswordValid
-      : isEmailValid &&
-            isPasswordValid &&
-            isforgetPasswordEmailValid &&
-            isNameValid;
-
-  void toggleAuthMode() {
-    _isLogin = !_isLogin;
-    _clearErrors();
+  // LOGIN
+  void validateLoginEmail() {
+    loginEmailError = ValidatorUtils.validateEmail(loginEmailController.text);
     update();
   }
 
-  void toggleObscureText() {
-    _obscureText = !_obscureText;
+  // Only validate password on login press
+  void validateLoginPasswordOnLogin() {
+    loginPasswordError = ValidatorUtils.validatePassword(
+      loginPasswordController.text,
+    );
     update();
   }
 
-  void toggleRememberMe() {
-    _rememberMe = !_rememberMe;
-    update();
-  }
-
-  void validateEmail() {
-    _emailError = ValidatorUtils.validateEmail(emailController.text);
-    update();
-  }
-
-  void validatePassword() {
-    _passwordError = ValidatorUtils.validatePassword(passwordController.text);
-    update();
-  }
-
-  void validateConfirmPassword() {
-    if (forgetPasswordEmail.text != passwordController.text) {
-      _confirmPasswordError = 'Passwords do not match';
+  // REGISTER
+  void validateRegisterName() {
+    final value = registerFullNameController.text.trim();
+    if (value.isEmpty) {
+      registerNameError = 'Full name is required';
+    } else if (value.length < 3) {
+      registerNameError = 'Name must be at least 3 characters';
+    } else if (!RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+      registerNameError = 'Only letters and spaces allowed';
     } else {
-      _confirmPasswordError = ValidatorUtils.validatePassword(
-        forgetPasswordEmail.text,
-      );
+      registerNameError = null;
     }
     update();
   }
 
-  void validateName() {
-    if (nameController.text.isEmpty) {
-      _nameError = 'Name is required';
+  void validateRegisterEmail() {
+    registerEmailError = ValidatorUtils.validateEmail(
+      registerEmailController.text,
+    );
+    update();
+  }
+
+  void validateRegisterPassword() {
+    registerPasswordError = ValidatorUtils.validatePassword(
+      registerPasswordController.text,
+    );
+    update();
+  }
+
+  // FORGOT PASSWORD
+  void validateForgotPasswordEmail() {
+    forgotPasswordEmailError = ValidatorUtils.validateEmail(
+      forgotPasswordEmailController.text,
+    );
+    update();
+  }
+
+  // RESET PASSWORD
+  void validateResetNewPassword() {
+    resetNewPasswordError = ValidatorUtils.validatePassword(
+      resetNewPasswordController.text,
+    );
+    update();
+  }
+
+  void validateResetConfirmPassword() {
+    if (resetConfirmPasswordController.text !=
+        resetNewPasswordController.text) {
+      resetConfirmPasswordError = 'Passwords do not match';
     } else {
-      _nameError = null;
+      resetConfirmPasswordError = null;
     }
     update();
   }
 
-  // Validate all fields
-  bool validateAllFields() {
-    _emailError = ValidatorUtils.validateEmail(emailController.text);
-    _passwordError = ValidatorUtils.validatePassword(passwordController.text);
+  /* ───────────────── ACTIONS ───────────────── */
 
-    if (!_isLogin) {
-      if (forgetPasswordEmail.text != passwordController.text) {
-        _confirmPasswordError = 'Passwords do not match';
-      } else {
-        _confirmPasswordError = ValidatorUtils.validatePassword(
-          forgetPasswordEmail.text,
-        );
-      }
-
-      _nameError = nameController.text.isEmpty ? 'Name is required' : null;
-    }
-    update();
-    // After computing all errors, call update once
-    return canSubmit;
-  }
-
-  // Auth Methods
   Future<void> login() async {
-    if (!validateAllFields()) return;
+    // validate email and password only when login pressed
+    validateLoginEmail();
+    validateLoginPasswordOnLogin();
+
+    if (!canLogin) return;
 
     _setLoading(true);
     try {
-      // TODO: Implement actual login logic
-      await Future.delayed(const Duration(seconds: 2)); // Simulate API call
-
-      // Handle successful login
+      navigateToReplacement(AppRoutes.ownerBottomNavigation);
       Get.snackbar('Success', 'Login successful');
-    } catch (e) {
-      Get.snackbar('Error', 'Login failed: ${e.toString()}');
+    } catch (_) {
+      Get.snackbar('Error', 'Login failed');
     } finally {
       _setLoading(false);
     }
   }
 
   Future<void> register() async {
-    if (!validateAllFields()) return;
+    validateRegisterName();
+    validateRegisterEmail();
+    validateRegisterPassword();
+    if (!canRegister) return;
 
     _setLoading(true);
     try {
-      // TODO: Implement actual registration logic
-      await Future.delayed(const Duration(seconds: 2)); // Simulate API call
-
-      // Handle successful registration
+      await Future.delayed(const Duration(seconds: 2));
       Get.snackbar('Success', 'Registration successful');
-    } catch (e) {
-      Get.snackbar('Error', 'Registration failed: ${e.toString()}');
+    } catch (_) {
+      Get.snackbar('Error', 'Registration failed');
     } finally {
       _setLoading(false);
     }
   }
 
-  Future<void> submitForm() async {
-    if (_isLogin) {
-      await login();
-    } else {
-      await register();
-    }
+  Future<void> submitForgotPassword() async {
+    validateForgotPasswordEmail();
+    if (!canSubmitForgotPassword) return;
+
+    _setLoading(true);
+    await Future.delayed(const Duration(seconds: 2));
+    _setLoading(false);
+    Get.snackbar('Success', 'Reset link sent to email');
   }
 
-  // Helper Methods
-  void _setLoading(bool loading) {
-    _isLoading = loading;
+  Future<void> submitResetPassword() async {
+    validateResetNewPassword();
+    validateResetConfirmPassword();
+    if (!canResetPassword) return;
+
+    _setLoading(true);
+    await Future.delayed(const Duration(seconds: 2));
+    _setLoading(false);
+    Get.snackbar('Success', 'Password reset successful');
+  }
+
+  /* ───────────────── HELPERS ───────────────── */
+
+  void toggleLoginPasswordVisibility() {
+    obscureLoginPassword = !obscureLoginPassword;
     update();
   }
 
-  void _clearErrors() {
-    _emailError = null;
-    _passwordError = null;
-    _confirmPasswordError = null;
-    _nameError = null;
+  void toggleRegisterPasswordVisibility() {
+    obscureRegisterPassword = !obscureRegisterPassword;
+    update();
   }
 
-  void clearForm() {
-    emailController.clear();
-    passwordController.clear();
-    forgetPasswordEmail.clear();
-    nameController.clear();
-    _rememberMe = false;
-    _clearErrors();
+  void toggleResetNewPasswordVisibility() {
+    obscureResetNewPassword = !obscureResetNewPassword;
+    update();
+  }
+
+  void toggleResetConfirmPasswordVisibility() {
+    obscureResetConfirmPassword = !obscureResetConfirmPassword;
+    update();
+  }
+
+  void toggleRememberMe() {
+    rememberMe = !rememberMe;
+    update();
+  }
+
+  void _setLoading(bool value) {
+    isLoading = value;
+    update();
+  }
+
+  void clearErrors() {
+    loginEmailError = null;
+    loginPasswordError = null;
+    registerNameError = null;
+    registerEmailError = null;
+    registerPasswordError = null;
+    forgotPasswordEmailError = null;
+    resetNewPasswordError = null;
+    resetConfirmPasswordError = null;
+  }
+
+  void clearAllFields() {
+    loginEmailController.clear();
+    loginPasswordController.clear();
+    registerFullNameController.clear();
+    registerEmailController.clear();
+    registerPasswordController.clear();
+    forgotPasswordEmailController.clear();
+    resetNewPasswordController.clear();
+    resetConfirmPasswordController.clear();
+    rememberMe = false;
+    clearErrors();
     update();
   }
 
   @override
   void onClose() {
-    emailController.dispose();
-    passwordController.dispose();
-    forgetPasswordEmail.dispose();
-    nameController.dispose();
+    loginEmailController.dispose();
+    loginPasswordController.dispose();
+    registerFullNameController.dispose();
+    registerEmailController.dispose();
+    registerPasswordController.dispose();
+    forgotPasswordEmailController.dispose();
+    resetNewPasswordController.dispose();
+    resetConfirmPasswordController.dispose();
     super.onClose();
   }
 }

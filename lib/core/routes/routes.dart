@@ -1,11 +1,14 @@
 import 'package:get/get.dart';
 import 'package:pyroapp/core/routes/route_names.dart';
-import 'package:pyroapp/features/owners/auth/view/authenticate.dart';
-import 'package:pyroapp/features/owners/auth/view/login/forgetpassword.dart';
-import 'package:pyroapp/features/owners/auth/view/getstarted.dart';
-import 'package:pyroapp/features/owners/auth/view/login/loginscreen.dart';
-import 'package:pyroapp/features/owners/auth/view/login/resetpassword.dart';
-import 'package:pyroapp/features/owners/auth/view/register/verificationcode.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/authenticate.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/getstarted.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/login/forgetpassword.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/login/loginscreen.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/login/resetpassword.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/register/verificationcode.dart';
+import 'package:pyroapp/features/owners/bottomnavigation/view/bottomnavigation.dart';
+import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
+import 'package:pyroapp/features/owners/profile/view/screens/completeprofile.dart';
 import 'package:pyroapp/features/shared/screens/language_screen.dart';
 import 'package:pyroapp/features/shared/screens/splashscreen.dart';
 
@@ -22,9 +25,15 @@ class AppPages {
     GetPage(name: AppRoutes.authenticate, page: () => AuthenticateScreen()),
     GetPage(name: AppRoutes.getstarted, page: () => GetStartedScreen()),
     GetPage(name: AppRoutes.verificationCode, page: () => VerificationCode()),
-
-    // GetPage(name: AppRoutes.getstarted, page: () => GetStartedScreen()),
-    // GetPage(name: AppRoutes.getstarted, page: () => GetStartedScreen()),
+    GetPage(
+      name: AppRoutes.completeProfileScreen,
+      page: () => CompleteProfileScreen(),
+    ),
+    GetPage(
+      name: AppRoutes.ownerBottomNavigation,
+      page: () => OwnerBottomNavigation(),
+    ),
+    GetPage(name: AppRoutes.ownerHomeScreen, page: () => OwnerHomeScreen()),
     // GetPage(name: AppRoutes.getstarted, page: () => GetStartedScreen()),
   ];
 }

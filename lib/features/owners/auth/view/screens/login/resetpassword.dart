@@ -7,7 +7,7 @@ import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/features/owners/auth/controller/owner_auth_controller.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
 import 'package:pyroapp/features/shared/widgets/customappbar.dart';
-import 'package:pyroapp/features/shared/widgets/bottomsheets/emailbottomsheet.dart';
+import 'package:pyroapp/features/owners/auth/view/widgets/bottomsheets/emailbottomsheet.dart';
 import 'package:pyroapp/features/shared/widgets/textfield.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
@@ -35,41 +35,42 @@ class ResetPasswordScreen extends StatelessWidget {
               ),
               SizedBox(height: AppDimensions.height30),
               CustomFormField(
-                obscureText: controller.obscureText,
+                obscureText: controller.obscureResetNewPassword,
                 fieldTitle: AppStrings.createnewpassword,
                 icon: IconButton(
                   icon: Icon(
-                    controller.obscureText
+                    controller.obscureResetNewPassword
                         ? Icons.visibility_off
                         : Icons.visibility,
                     color: Colors.black,
                   ),
-                  onPressed: controller.toggleObscureText,
+                  onPressed: controller.toggleResetNewPasswordVisibility,
                 ),
-                textEditingController: controller.passwordController,
+                textEditingController: controller.resetNewPasswordController,
                 onChanged: (value) {
-                  controller.validatePassword();
+                  controller.validateResetNewPassword();
                 },
               ),
               SizedBox(height: AppDimensions.height15),
               CustomFormField(
-                obscureText: controller.obscureText,
+                obscureText: controller.obscureResetConfirmPassword,
                 fieldTitle: AppStrings.confirmnewpassword,
                 icon: IconButton(
                   icon: Icon(
-                    controller.obscureText
+                    controller.obscureResetConfirmPassword
                         ? Icons.visibility_off
                         : Icons.visibility,
                     color: Colors.black,
                   ),
-                  onPressed: controller.toggleObscureText,
+                  onPressed: controller.toggleResetConfirmPasswordVisibility,
                 ),
-                textEditingController: controller.passwordController,
+                textEditingController:
+                    controller.resetConfirmPasswordController,
                 onChanged: (value) {
-                  controller.validatePassword();
+                  controller.validateResetConfirmPassword();
                 },
               ),
-              SizedBox(height: AppDimensions.screenHeight * 0.25),
+              Spacer(),
               Padding(
                 padding: EdgeInsets.only(bottom: AppDimensions.paddingLarge),
                 child: MainElevatedButton(

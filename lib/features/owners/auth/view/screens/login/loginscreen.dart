@@ -60,35 +60,35 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     CustomFormField(
                       fieldTitle: AppStrings.emailaddress,
-                      icon: controller.isEmailValid
+                      icon: controller.isLoginEmailValid
                           ? Icon(Icons.check_circle, color: AppColors.secondary)
                           : Icon(Icons.email_outlined, color: Colors.black),
-                      textEditingController: controller.emailController,
+                      textEditingController: controller.loginEmailController,
                       onChanged: (value) {
-                        controller.validateEmail();
+                        controller.validateLoginEmail();
                       },
                     ),
                     SizedBox(height: AppDimensions.height15),
                     CustomFormField(
-                      hasError: !controller.isPasswordValid,
-                      fillColor: controller.isPasswordValid
+                      hasError: !controller.isLoginPasswordValid,
+                      fillColor: controller.isLoginPasswordValid
                           ? Colors.white
                           : AppColors.softButtonColor,
-                      obscureText: controller.obscureText,
+                      obscureText: controller.obscureLoginPassword,
                       fieldTitle: AppStrings.password,
                       icon: IconButton(
                         icon: Icon(
-                          controller.obscureText
+                          controller.obscureLoginPassword
                               ? Icons.visibility_off
                               : Icons.visibility,
                           color: Colors.black,
                         ),
-                        onPressed: controller.toggleObscureText,
+                        onPressed: controller.toggleLoginPasswordVisibility,
                       ),
-                      textEditingController: controller.passwordController,
+                      textEditingController: controller.loginPasswordController,
                     ),
 
-                    SizedBox(height: AppDimensions.height15),
+                    SizedBox(height: AppDimensions.height10),
 
                     Align(
                       alignment: Alignment.centerRight,
@@ -118,11 +118,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     MainElevatedButton(
                       title: AppStrings.continuee,
                       onPressed: () {
+                        controller.login();
                         print("Onpressed click continue");
-                        controller.validateAllFields();
-                        if (controller.canSubmit) {
-                          controller.submitForm();
-                        }
+                        // controller.validateAllFields();
+                        // if (controller.canSubmit) {
+                        //   controller.submitForm();
+                        // }
                       },
                     ),
                     Padding(

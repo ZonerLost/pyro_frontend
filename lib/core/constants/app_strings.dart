@@ -75,9 +75,9 @@ class AppStrings {
   static const deviceModel = 'Device Model';
   static const deviceSerialnumber = 'Device Serial number';
   static const addmorelocation = 'Add more location';
-  // static const login = 'Login';
-  // static const login = 'Login';
-  // static const login = 'Login';
+  static const addedDevices = 'Added Devices';
+  static const welcomeBackTitle = 'Welcome Back!';
+  static const categories = 'Categories';
   // static const login = 'Login';
   // static const login = 'Login';
   // static const login = 'Login';

@@ -5,7 +5,7 @@ import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/features/owners/auth/controller/owner_auth_controller.dart';
 
 class OtpWidget extends StatelessWidget {
-  final OwnerAuthController controller = Get.find();
+  final controller = Get.find<OwnerAuthController>();
   final int length;
   final double boxSize;
   final Color emptyColor;
@@ -18,7 +18,7 @@ class OtpWidget extends StatelessWidget {
     this.length = 5,
     this.boxSize = 60,
     this.emptyColor = Colors.white,
-    this.filledColor = AppColors.orangeOtpSoftColor,
+    this.filledColor = AppColors.primarySoftColor,
     this.borderColor = AppColors.primary,
     this.onCompleted,
   });

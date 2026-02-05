@@ -15,10 +15,10 @@ class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
   @override
-  State<RegisterScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<RegisterScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -59,48 +59,56 @@ class _LoginScreenState extends State<RegisterScreen> {
 
                     CustomFormField(
                       fieldTitle: AppStrings.fullname,
-                      icon: controller.isNameValid
+                      icon: controller.isRegisterNameValid
                           ? Icon(Icons.check_circle, color: AppColors.secondary)
                           : Icon(Icons.email_outlined, color: Colors.black),
-                      textEditingController: controller.nameController,
+                      textEditingController:
+                          controller.registerFullNameController,
                       onChanged: (value) {
-                        controller.validateName();
+                        controller.validateRegisterName();
                       },
                     ),
                     SizedBox(height: AppDimensions.height15),
                     CustomFormField(
                       fieldTitle: AppStrings.emailaddress,
-                      icon: controller.isEmailValid
+                      icon: controller.isRegisterEmailValid
                           ? Icon(Icons.check_circle, color: AppColors.secondary)
                           : Icon(Icons.email_outlined, color: Colors.black),
-                      textEditingController: controller.emailController,
+                      textEditingController: controller.registerEmailController,
                       onChanged: (value) {
-                        controller.validateEmail();
+                        controller.validateRegisterEmail();
                       },
                     ),
                     SizedBox(height: AppDimensions.height15),
                     CustomFormField(
-                      hasError: !controller.isPasswordValid,
-                      fillColor: controller.isPasswordValid
-                          ? Colors.white
-                          : AppColors.softButtonColor,
-                      obscureText: controller.obscureText,
-                      fieldTitle: AppStrings.createpassword,
+                      hasError: false,
+                      fillColor: Colors.white,
+                      obscureText: controller.obscureRegisterPassword,
+                      fieldTitle: AppStrings.password,
                       icon: IconButton(
-                        icon: controller.isPasswordValid
+                        icon:
+                            controller.registerPasswordError == null &&
+                                controller
+                                    .registerPasswordController
+                                    .text
+                                    .isNotEmpty
                             ? Icon(
                                 Icons.check_circle,
                                 color: AppColors.secondary,
                               )
                             : Icon(
-                                controller.obscureText
+                                controller.obscureRegisterPassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
                                 color: Colors.black,
                               ),
-                        onPressed: controller.toggleObscureText,
+                        onPressed: controller.toggleRegisterPasswordVisibility,
                       ),
-                      textEditingController: controller.passwordController,
+                      textEditingController:
+                          controller.registerPasswordController,
+                      onChanged: (value) {
+                        controller.validateRegisterPassword();
+                      },
                     ),
 
                     SizedBox(height: AppDimensions.height100),

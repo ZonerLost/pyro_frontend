@@ -11,8 +11,8 @@ class AppRoutes {
   static const getstarted = '/getstarted';
   static const verificationCode = '/verificationCode';
   static const completeProfileScreen = '/completeProfileScreen';
-  // static const getstarted = '/getstarted';
-  // static const getstarted = '/getstarted';
+  static const ownerBottomNavigation = '/ownerBottomNavigation';
+  static const ownerHomeScreen = '/ownerHomeScreen';
   // static const getstarted = '/getstarted';
   // static const getstarted = '/getstarted';
 }

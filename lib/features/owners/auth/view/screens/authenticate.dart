@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pyroapp/features/owners/auth/controller/owner_auth_controller.dart';
-import 'package:pyroapp/features/owners/auth/view/login/loginscreen.dart';
-import 'package:pyroapp/features/owners/auth/view/register/registerscreen.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/login/loginscreen.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/register/registerscreen.dart';
 
 class AuthenticateScreen extends StatelessWidget {
   const AuthenticateScreen({super.key});

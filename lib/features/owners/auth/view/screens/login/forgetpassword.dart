@@ -7,7 +7,7 @@ import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/features/owners/auth/controller/owner_auth_controller.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
 import 'package:pyroapp/features/shared/widgets/customappbar.dart';
-import 'package:pyroapp/features/shared/widgets/bottomsheets/emailbottomsheet.dart';
+import 'package:pyroapp/features/owners/auth/view/widgets/bottomsheets/emailbottomsheet.dart';
 import 'package:pyroapp/features/shared/widgets/textfield.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -36,17 +36,17 @@ class ForgetPassword extends StatelessWidget {
               SizedBox(height: AppDimensions.height30),
               CustomFormField(
                 fieldTitle: AppStrings.emailaddress,
-                icon: controller.isforgetPasswordEmailValid
+                icon: controller.isForgotPasswordEmailValid
                     ? Icon(Icons.check_circle, color: AppColors.secondary)
                     : Icon(Icons.email_outlined, color: Colors.black),
-                textEditingController: controller.forgetPasswordEmail,
+                textEditingController: controller.forgotPasswordEmailController,
                 onChanged: (value) {
-                  controller.validateEmail();
+                  controller.validateForgotPasswordEmail();
                 },
               ),
-              SizedBox(height: AppDimensions.screenHeight * 0.25),
+              Spacer(),
               Padding(
-                padding: EdgeInsets.only(bottom: AppDimensions.paddingLarge),
+                padding: EdgeInsets.only(bottom: AppDimensions.paddingMedium),
                 child: MainElevatedButton(
                   title: AppStrings.sendverificationlink,
                   onPressed: () {
