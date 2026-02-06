@@ -7,12 +7,16 @@ class AppColors {
   static const maincolor2 = Color(0xFF0A81D1);
   static const maincolor3 = Color(0xFF50514F);
   static const maincolor4 = Color(0xFFF4F4F4);
+  static const maincolor5 = Color(0xFF34A853);
   static const black = Color(0xFF000000);
   static const white = Color(0xFFFFFFFF);
   static const grey = Color(0xFF757575);
 
   static const scaffoldBackgroundColor = Color(0xFFF9F9F9);
-  static const softButtonColor = Color.fromARGB(38, 231, 62, 59);
+  static const softButtonColor = Color.fromARGB(255, 255, 208, 208);
   static const primarySoftColor = Color(0xFFFFE8D6);
-  // static const orangeOtpSoftColor = Color.fromARGB(255, 255, 193, 121);
+  static const secondarySoftColor = Color.fromARGB(47, 26, 166, 131);
+  static const greenSoftColor = Color.fromARGB(255, 207, 229, 213);
+  static const blueSoftColor = Color.fromARGB(255, 225, 243, 255);
+  // static const orangeOtpSoftColor =  Color.fromARGB(255, 255, 193, 121);
 }

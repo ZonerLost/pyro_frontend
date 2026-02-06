@@ -10,7 +10,7 @@ class AccountCreatedBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomBottomSheet(
+    return CustomBottomSheetNotification(
       image: ImageStrings.accountcreatedicon,
       title: AppStrings.accountcreatedTitle,
       subtitle: AppStrings.accountcreatedSubtitle,

@@ -9,6 +9,8 @@ import 'package:pyroapp/features/owners/auth/view/screens/register/verificationc
 import 'package:pyroapp/features/owners/bottomnavigation/view/bottomnavigation.dart';
 import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
 import 'package:pyroapp/features/owners/profile/view/screens/completeprofile.dart';
+import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/screens/check_availability_screen.dart';
+import 'package:pyroapp/features/owners/vendorprofile/vendorprofile/views/screens/vendorprofile.dart';
 import 'package:pyroapp/features/shared/screens/language_screen.dart';
 import 'package:pyroapp/features/shared/screens/splashscreen.dart';
 
@@ -34,6 +36,17 @@ class AppPages {
       page: () => OwnerBottomNavigation(),
     ),
     GetPage(name: AppRoutes.ownerHomeScreen, page: () => OwnerHomeScreen()),
-    // GetPage(name: AppRoutes.getstarted, page: () => GetStartedScreen()),
+    GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    GetPage(
+      name: AppRoutes.checkAvailability,
+      page: () => CheckAvailabilityScreen(),
+    ),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
   ];
 }

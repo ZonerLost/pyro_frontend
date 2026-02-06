@@ -10,7 +10,7 @@ class EmailSentConfirmationSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomBottomSheet(
+    return CustomBottomSheetNotification(
       image: ImageStrings.emailsenticon,
       title: AppStrings.emailSentTitle,
       subtitle: AppStrings.emailSentSubtitle,

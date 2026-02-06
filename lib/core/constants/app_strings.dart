@@ -78,6 +78,27 @@ class AppStrings {
   static const addedDevices = 'Added Devices';
   static const welcomeBackTitle = 'Welcome Back!';
   static const categories = 'Categories';
+  static const profile = 'Profile';
+  static const checkAvailability = 'Check Availability';
+  static const importantInstructions = 'Important Instructions';
+  static const importantinstructionHint = 'Write instructions…';
+  static const advancePayment = 'Advance Payment';
+  static const continueAndPay = 'Continue & Pay';
+  static const selectPayment = 'Select Payment';
+  static const selectPaymentSubtitle =
+      'Please select the preferred payment method.';
+  static const bookingConfirmed = 'Booking Confirmed';
+  static const bookingConfirmedSubtitle = 'Your booking for ';
+  static const bookingConfirmedSubtitleContinued =
+      'has been confirmed. You will receive a confirmation mail soon.';
+  static const backToHome = 'Back to Home';
+  static const bookNow = 'Book Now';
+  static const bookingDetails = 'Booking Details';
+  // static const login = 'Login';
+  // static const login = 'Login';
+  // static const login = 'Login';
+  // static const login = 'Login';
+  // static const login = 'Login';
   // static const login = 'Login';
   // static const login = 'Login';
   // static const login = 'Login';
