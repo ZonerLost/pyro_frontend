@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/app_strings.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/features/owners/profile/view/widgets/adddevicebottomsheet.dart';
 import 'package:pyroapp/features/owners/profile/view/widgets/devicetile.dart';
@@ -43,7 +44,12 @@ class LocationCard extends StatelessWidget {
               CircleAvatar(
                 radius: AppDimensions.radius16,
                 backgroundColor: Color(0xFFE8F5F3),
-                child: Icon(Icons.location_on, color: Colors.teal),
+                child: Center(
+                  child: Image.asset(
+                    ImageStrings.locationpin,
+                    height: AppDimensions.height20,
+                  ),
+                ),
               ),
               SizedBox(width: AppDimensions.height15),
               Expanded(

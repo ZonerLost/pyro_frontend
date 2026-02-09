@@ -31,14 +31,14 @@ class VendorFilterChip extends StatelessWidget {
           border: Border.all(
             color: selected
                 ? AppColors.secondary
-                : AppColors.grey.withOpacity(0.5),
+                : AppColors.grey.withOpacity(0.1),
           ),
         ),
         child: Text(
           label,
           style: AppTextStyles.bodySmall.copyWith(
             color: selected ? AppColors.secondary : AppColors.black,
-            fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+            fontWeight: FontWeight.w400,
           ),
         ),
       ),

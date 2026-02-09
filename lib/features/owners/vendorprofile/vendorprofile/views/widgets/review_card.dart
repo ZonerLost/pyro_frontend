@@ -30,12 +30,21 @@ class ReviewCard extends StatelessWidget {
               CircleAvatar(backgroundImage: NetworkImage(review.userAvatar)),
               SizedBox(width: AppDimensions.width10),
               Expanded(
-                child: Text(
-                  review.userName,
-                  style: AppTextStyles.bodyMedium.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: AppColors.black,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      review.userName,
+                      style: AppTextStyles.bodyMedium.copyWith(
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.black,
+                      ),
+                    ),
+                    Text(
+                      "2 days ago",
+                      style: AppTextStyles.bodySmall.copyWith(),
+                    ),
+                  ],
                 ),
               ),
               Icon(
@@ -48,7 +57,7 @@ class ReviewCard extends StatelessWidget {
                 "${review.rating.toStringAsFixed(1)} ratings",
                 style: AppTextStyles.bodySmall.copyWith(
                   color: AppColors.black,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],

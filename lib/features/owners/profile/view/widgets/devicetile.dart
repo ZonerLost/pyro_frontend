@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 
 class DeviceTile extends StatelessWidget {
@@ -27,11 +28,17 @@ class DeviceTile extends StatelessWidget {
           Expanded(child: Text(title, style: AppTextStyles.bodyMedium)),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.delete, color: AppColors.maincolor1),
+            icon: Image.asset(
+              ImageStrings.trash,
+              height: AppDimensions.height25,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: const Icon(Icons.edit, color: AppColors.secondary),
+            icon: Image.asset(
+              ImageStrings.edit,
+              height: AppDimensions.height20,
+            ),
           ),
         ],
       ),

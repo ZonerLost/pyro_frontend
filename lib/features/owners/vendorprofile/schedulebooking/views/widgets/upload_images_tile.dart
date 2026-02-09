@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 
 class UploadImagesTile extends StatelessWidget {
@@ -22,14 +23,13 @@ class UploadImagesTile extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            height: AppDimensions.height50,
-            width: AppDimensions.height50,
-            decoration: BoxDecoration(
-              color: AppColors.primarySoftColor,
-              borderRadius: BorderRadius.circular(AppDimensions.radius12),
+          CircleAvatar(
+            radius: AppDimensions.radius16,
+            backgroundColor: AppColors.primarySoftColor,
+            child: Image.asset(
+              ImageStrings.galleryicon,
+              height: AppDimensions.height20,
             ),
-            child: Icon(Icons.image, color: AppColors.primary),
           ),
           SizedBox(width: AppDimensions.width10),
           Expanded(
@@ -39,7 +39,7 @@ class UploadImagesTile extends StatelessWidget {
                 Text(
                   'Upload Product Images',
                   style: AppTextStyles.bodyMedium.copyWith(
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w500,
                     color: AppColors.black,
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:pyroapp/core/routes/route_names.dart';
+import 'package:pyroapp/features/notification/views/screens/notifications_screen.dart';
 import 'package:pyroapp/features/owners/auth/view/screens/authenticate.dart';
 import 'package:pyroapp/features/owners/auth/view/screens/getstarted.dart';
 import 'package:pyroapp/features/owners/auth/view/screens/login/forgetpassword.dart';
@@ -41,7 +42,10 @@ class AppPages {
       name: AppRoutes.checkAvailability,
       page: () => CheckAvailabilityScreen(),
     ),
-    // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
+    GetPage(
+      name: AppRoutes.notificationScreen,
+      page: () => NotificationsScreen(),
+    ),
     // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
     // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),
     // GetPage(name: AppRoutes.vendorProfile, page: () => VendorProfileScreen()),

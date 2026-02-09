@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pyroapp/core/constants/app_colors.dart';
+import 'package:pyroapp/core/constants/app_dimensions.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
+import 'package:pyroapp/features/owners/bookings/views/screens/bookings_screen.dart';
+import 'package:pyroapp/features/notification/views/screens/notifications_screen.dart';
 import 'package:pyroapp/features/owners/bottomnavigation/controller/bottomnav_controller.dart';
+import 'package:pyroapp/features/owners/chats/views/screens/chats_screen.dart';
 import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
 
 class OwnerBottomNavigation extends StatefulWidget {
@@ -16,10 +22,10 @@ class _BottomNavigationBState extends State<OwnerBottomNavigation> {
   );
 
   final List<Widget> _children = [
-    OwnerHomeScreen(),
     const OwnerHomeScreen(),
     const OwnerHomeScreen(),
-    const OwnerHomeScreen(),
+    const BookingsScreen(),
+    const ChatsScreen(),
     OwnerHomeScreen(),
   ];
 
@@ -40,7 +46,6 @@ class _BottomNavigationBState extends State<OwnerBottomNavigation> {
       builder: (controller) {
         return Obx(
           () => Scaffold(
-            extendBody: true,
             backgroundColor: Colors.white,
             body: _children[bottomnavbarController.selectedIndex.value],
             bottomNavigationBar: Container(
@@ -70,56 +75,64 @@ class _BottomNavigationBState extends State<OwnerBottomNavigation> {
                     fontWeight: FontWeight.bold,
                   ),
                   unselectedLabelStyle: Get.textTheme.labelSmall,
-                  selectedItemColor: Colors.amber.shade800,
+                  selectedItemColor: AppColors.bottombarIcon,
                   unselectedItemColor: Colors.black.withOpacity(0.5),
-                  iconSize: 26,
                   onTap: _onItemTapped,
                   items: [
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.home),
-                      activeIcon: Icon(Icons.home),
+                      icon: Image.asset(
+                        ImageStrings.homeoutlined,
+                        height: AppDimensions.height25,
+                      ),
+                      activeIcon: Image.asset(
+                        ImageStrings.home,
+                        height: AppDimensions.height25,
+                      ),
                       label: 'Home',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.devices),
-                      activeIcon: Icon(Icons.devices),
+                      icon: Image.asset(
+                        ImageStrings.devicesoutlined,
+                        height: AppDimensions.height25,
+                      ),
+                      activeIcon: Image.asset(
+                        ImageStrings.devices,
+                        height: AppDimensions.height25,
+                      ),
                       label: 'Devices',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.book),
-                      activeIcon: Icon(Icons.book),
+                      icon: Image.asset(
+                        ImageStrings.bookingoutlined,
+                        height: AppDimensions.height25,
+                      ),
+                      activeIcon: Image.asset(
+                        ImageStrings.booking,
+                        height: AppDimensions.height25,
+                      ),
                       label: 'Bookings',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.chat),
-                      activeIcon: Icon(Icons.chat),
+                      icon: Image.asset(
+                        ImageStrings.chatoutlined,
+                        height: AppDimensions.height25,
+                      ),
+                      activeIcon: Image.asset(
+                        ImageStrings.chat,
+                        height: AppDimensions.height25,
+                      ),
                       label: 'Chats',
                     ),
                     BottomNavigationBarItem(
-                      icon: Icon(Icons.person),
-                      activeIcon: Icon(Icons.person),
+                      icon: CircleAvatar(
+                        radius: AppDimensions.radius12,
+                        backgroundColor: Colors.grey.shade300,
+                        backgroundImage: NetworkImage(
+                          'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg',
+                        ),
+                      ),
                       label: 'Profile',
                     ),
-                    // BottomNavigationBarItem(
-                    //   icon: Icon(Ionicons.bookmark_outline),
-                    //   activeIcon: Icon(Ionicons.bookmark),
-                    //   label: 'Favorites',
-                    // ),
-                    // BottomNavigationBarItem(
-                    //   icon: Icon(Ionicons.chatbox_ellipses_outline),
-                    //   activeIcon: Icon(Ionicons.chatbox_ellipses),
-                    //   label: 'Chat',
-                    // ),
-                    // BottomNavigationBarItem(
-                    //   icon: Icon(Ionicons.cart_outline),
-                    //   activeIcon: Icon(Ionicons.cart),
-                    //   label: 'Cart',
-                    // ),
-                    // BottomNavigationBarItem(
-                    //   icon: Icon(Ionicons.person_circle_outline),
-                    //   activeIcon: Icon(Ionicons.person_circle),
-                    //   label: 'Profile',
-                    // ),
                   ],
                 ),
               ),

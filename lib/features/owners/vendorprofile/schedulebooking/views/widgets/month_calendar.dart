@@ -81,7 +81,7 @@ class MonthCalendar extends StatelessWidget {
                   monthLabel(),
                   style: AppTextStyles.bodyMedium.copyWith(
                     color: AppColors.black,
-                    fontWeight: FontWeight.w700,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
@@ -163,7 +163,7 @@ class MonthCalendar extends StatelessWidget {
                                     ? AppColors.white
                                     : AppColors.black,
                                 fontWeight: isSelected
-                                    ? FontWeight.w800
+                                    ? FontWeight.w600
                                     : FontWeight.w500,
                               ),
                             ),

@@ -26,31 +26,31 @@ class CustomBottomSheet extends StatelessWidget {
         return Stack(
           clipBehavior: Clip.none,
           children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Center(
-                child: Transform.translate(
-                  offset: Offset(0, -peekOffset),
-                  child: Container(
-                    width: pillWidth,
-                    height: pillHeight,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF9F9F9),
-                      borderRadius: BorderRadius.circular(pillHeight),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 10,
-                          offset: Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // Positioned(
+            //   top: 0,
+            //   left: 0,
+            //   right: 0,
+            //   child: Center(
+            //     child: Transform.translate(
+            //       offset: Offset(0, -peekOffset),
+            //       child: Container(
+            //         width: pillWidth,
+            //         height: pillHeight,
+            //         decoration: BoxDecoration(
+            //           color: const Color(0xFFF9F9F9),
+            //           borderRadius: BorderRadius.circular(pillHeight),
+            //           boxShadow: const [
+            //             BoxShadow(
+            //               color: Colors.black12,
+            //               blurRadius: 10,
+            //               offset: Offset(0, 4),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
 
             // Foreground content
             Padding(

@@ -11,7 +11,7 @@ class BookingSlot {
 class PaymentMethod {
   final String id;
   final String title;
-  final IconData icon;
+  final Widget icon;
   const PaymentMethod({
     required this.id,
     required this.title,

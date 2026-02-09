@@ -51,7 +51,8 @@ class VendorProfileController extends GetxController {
       id: 'v1',
       ownerName: 'Christopher Henry',
       businessName: 'MT Repair Services LLC',
-      avatarUrl: 'https://i.pravatar.cc/150?img=47',
+      avatarUrl:
+          'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg',
       details: VendorDetails(
         about:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
@@ -90,7 +91,7 @@ class VendorProfileController extends GetxController {
               description:
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
               price: 100,
-              icon: Icons.build,
+              icon: Icons.ac_unit,
             ),
           ],
         ),

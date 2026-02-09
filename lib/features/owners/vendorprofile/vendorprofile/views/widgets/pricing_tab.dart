@@ -16,7 +16,7 @@ class PricingTab extends StatelessWidget {
   Widget build(BuildContext context) {
     final v = controller.vendor.value!;
     return SingleChildScrollView(
-      padding: EdgeInsets.all(AppDimensions.paddingMedium),
+      padding: EdgeInsets.all(AppDimensions.paddingSmall),
       child: Obx(() {
         final selectedIndex = controller.selectedCategoryIndex.value;
         final selectedCat = controller.selectedCategory;
@@ -50,7 +50,9 @@ class PricingTab extends StatelessWidget {
                     priceText: '\$${s.price.toStringAsFixed(2)}',
                     icon: s.icon,
                     onBookNow: () {
-                      final scheduleController = Get.put(ScheduleBookingController());
+                      final scheduleController = Get.put(
+                        ScheduleBookingController(),
+                      );
                       scheduleController.initBooking(
                         vendor: v,
                         service: s,

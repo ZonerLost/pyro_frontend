@@ -4,6 +4,7 @@ import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/app_strings.dart';
 import 'package:pyroapp/core/constants/image_strings.dart';
+import 'package:pyroapp/core/routes/route_names.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/models/booking_models.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/widgets/dotted_success_icon.dart';
@@ -94,7 +95,7 @@ class BookingConfirmedScreen extends StatelessWidget {
                     _divider(),
                     _row('Time', summary.timeRange),
                     _divider(),
-                    _row('Vendor', summary.vendorBusinessName),
+                    _row('Technician', summary.vendorBusinessName),
                     _divider(),
                     _row('Service Type', summary.serviceType),
                     _divider(),
@@ -112,7 +113,8 @@ class BookingConfirmedScreen extends StatelessWidget {
               SizedBox(height: AppDimensions.height20),
               MainElevatedButton(
                 title: AppStrings.backToHome,
-                onPressed: () => Get.until((route) => route.isFirst),
+                onPressed: () =>
+                    Get.offAllNamed(AppRoutes.ownerBottomNavigation),
               ),
               SizedBox(height: AppDimensions.height20),
             ],

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/app_strings.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
@@ -83,6 +84,19 @@ class CardInformationBottomSheet extends StatelessWidget {
                       label: 'Card Number',
                       controller: c.cardNumberCtrl,
                       hint: '**** **** **** ****',
+                      suffixIcon: Padding(
+                        padding: EdgeInsets.only(
+                          right: AppDimensions.paddingSmall,
+                        ),
+                        child: Image.asset(
+                          ImageStrings.mastercardlogo,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                      suffixIconConstraints: BoxConstraints(
+                        maxHeight: AppDimensions.height25,
+                        maxWidth: AppDimensions.width50,
+                      ),
                     ),
                     SizedBox(height: AppDimensions.height15),
 
@@ -145,11 +159,15 @@ class _Field extends StatelessWidget {
   final String label;
   final TextEditingController controller;
   final String hint;
+  final Widget? suffixIcon;
+  final BoxConstraints? suffixIconConstraints;
 
   const _Field({
     required this.label,
     required this.controller,
     required this.hint,
+    this.suffixIcon,
+    this.suffixIconConstraints,
   });
 
   @override
@@ -173,7 +191,6 @@ class _Field extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.white,
             borderRadius: BorderRadius.circular(AppDimensions.radius12),
-            border: Border.all(color: AppColors.grey.withOpacity(0.25)),
           ),
           child: TextField(
             controller: controller,
@@ -184,7 +201,10 @@ class _Field extends StatelessWidget {
               ),
               border: InputBorder.none,
               isDense: true,
+              suffixIcon: suffixIcon,
+              suffixIconConstraints: suffixIconConstraints,
             ),
+
             style: AppTextStyles.bodySmall.copyWith(color: AppColors.black),
           ),
         ),

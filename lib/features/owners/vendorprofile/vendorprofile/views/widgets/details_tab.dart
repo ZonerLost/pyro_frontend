@@ -20,15 +20,12 @@ class DetailsTab extends StatelessWidget {
           _sectionTitle('ABOUT US'),
           Text(
             d.about,
-            style: AppTextStyles.bodySmall.copyWith(color: AppColors.grey),
+            style: AppTextStyles.bodyMedium.copyWith(color: AppColors.black),
           ),
           SizedBox(height: AppDimensions.height10),
           Text(
             d.aboutExtra,
-            style: AppTextStyles.bodySmall.copyWith(
-              color: AppColors.grey,
-              fontSize: AppDimensions.font14,
-            ),
+            style: AppTextStyles.bodyMedium.copyWith(color: AppColors.black),
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: AppDimensions.height10),
@@ -51,13 +48,7 @@ class DetailsTab extends StatelessWidget {
   Widget _sectionTitle(String title) {
     return Padding(
       padding: EdgeInsets.only(bottom: AppDimensions.height5),
-      child: Text(
-        title,
-        style: AppTextStyles.bodyMedium.copyWith(
-          fontWeight: FontWeight.w600,
-          color: AppColors.black,
-        ),
-      ),
+      child: Text(title, style: AppTextStyles.bodySmall),
     );
   }
 
@@ -68,12 +59,12 @@ class DetailsTab extends StatelessWidget {
         children: [
           Text(
             '•  ',
-            style: AppTextStyles.bodySmall.copyWith(color: AppColors.black),
+            style: AppTextStyles.bodyMedium.copyWith(color: AppColors.black),
           ),
           Expanded(
             child: Text(
               text,
-              style: AppTextStyles.bodySmall.copyWith(color: AppColors.grey),
+              style: AppTextStyles.bodyMedium.copyWith(color: AppColors.black),
             ),
           ),
         ],
@@ -89,11 +80,11 @@ class DetailsTab extends StatelessWidget {
         children: [
           Text(
             day,
-            style: AppTextStyles.bodySmall.copyWith(color: AppColors.black),
+            style: AppTextStyles.bodyMedium.copyWith(color: AppColors.black),
           ),
           Text(
             time,
-            style: AppTextStyles.bodySmall.copyWith(
+            style: AppTextStyles.bodyMedium.copyWith(
               color: AppColors.black,
               fontWeight: FontWeight.w600,
             ),

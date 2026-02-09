@@ -56,21 +56,48 @@ class CheckAvailabilityScreen extends StatelessWidget {
             ),
 
             SizedBox(height: AppDimensions.height15),
-
-            InfoCard(
-              title: AppStrings.importantInstructions,
-              child: TextField(
-                minLines: 2,
-                maxLines: 4,
-                onChanged: c.updateInstructions,
-                decoration: InputDecoration(
-                  hintText: AppStrings.importantinstructionHint,
-                  hintStyle: AppTextStyles.bodySmall.copyWith(
-                    color: AppColors.grey,
+            Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(AppDimensions.radius16),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.black.withOpacity(0.04),
+                    blurRadius: AppDimensions.radius12,
                   ),
-                  border: InputBorder.none,
+                ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(AppDimensions.paddingMedium),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      AppStrings.importantInstructions,
+                      style: AppTextStyles.bodySmall.copyWith(),
+                    ),
+
+                    const SizedBox(height: 6),
+                    TextField(
+                      minLines: 2,
+                      maxLines: 4,
+                      onChanged: c.updateInstructions,
+                      decoration: InputDecoration(
+                        hintText: AppStrings.importantinstructionHint,
+                        hintStyle: AppTextStyles.bodyMedium.copyWith(
+                          color: AppColors.black,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      style: AppTextStyles.bodySmall.copyWith(
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
                 ),
-                style: AppTextStyles.bodySmall.copyWith(color: AppColors.black),
               ),
             ),
           ],

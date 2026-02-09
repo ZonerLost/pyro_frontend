@@ -61,7 +61,7 @@ class SelectPaymentBottomSheet extends StatelessWidget {
                       AppStrings.selectPayment,
                       style: AppTextStyles.bodyMedium.copyWith(
                         color: AppColors.black,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w500,
                         fontSize: AppDimensions.font18,
                       ),
                     ),

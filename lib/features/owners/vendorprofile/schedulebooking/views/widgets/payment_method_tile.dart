@@ -5,7 +5,7 @@ import 'package:pyroapp/core/theme/app_text_styles.dart';
 
 class PaymentMethodTile extends StatelessWidget {
   final String title;
-  final IconData icon;
+  final Widget icon;
   final bool selected;
   final VoidCallback onTap;
 
@@ -34,40 +34,35 @@ class PaymentMethodTile extends StatelessWidget {
             color: selected ? AppColors.primary : AppColors.white,
           ),
         ),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Icon(
-                  icon,
-                  size: AppDimensions.font20,
-                  color: selected ? AppColors.primary : AppColors.grey,
-                ),
-                SizedBox(height: AppDimensions.height10),
-                Text(
-                  title,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: AppTextStyles.bodySmall.copyWith(
-                    color: AppColors.black,
-                    fontWeight: FontWeight.w600,
+                icon,
+                if (selected)
+                  Padding(
+                    padding: EdgeInsets.only(right: AppDimensions.width15),
+                    child: Icon(
+                      Icons.check_circle,
+                      color: AppColors.primary,
+                      size: AppDimensions.height20,
+                    ),
                   ),
-                ),
               ],
             ),
-
-            if (selected)
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Icon(
-                  Icons.check_circle,
-                  color: AppColors.primary,
-                  size: AppDimensions.font16, // 🔥 slightly smaller
-                ),
+            SizedBox(height: AppDimensions.height15),
+            Text(
+              title,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: AppTextStyles.bodySmall.copyWith(
+                color: AppColors.black,
+                fontWeight: FontWeight.w600,
               ),
+            ),
           ],
         ),
       ),

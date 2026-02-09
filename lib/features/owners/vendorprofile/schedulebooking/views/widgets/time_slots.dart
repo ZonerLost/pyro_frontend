@@ -21,10 +21,10 @@ class TimeSlots extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3, // 🔒 EXACTLY 3 per row
+        crossAxisCount: 3,
         crossAxisSpacing: AppDimensions.width10,
         mainAxisSpacing: AppDimensions.height10,
-        childAspectRatio: 2.6, // 🔥 controls height
+        childAspectRatio: 2.6,
       ),
       itemCount: slots.length,
       itemBuilder: (context, index) {
@@ -51,7 +51,7 @@ class TimeSlots extends StatelessWidget {
               textAlign: TextAlign.center,
               style: AppTextStyles.bodySmall.copyWith(
                 color: isSelected ? AppColors.white : AppColors.black,
-                fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.w500,
               ),
             ),
           ),

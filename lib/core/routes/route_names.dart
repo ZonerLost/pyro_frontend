@@ -15,4 +15,10 @@ class AppRoutes {
   static const ownerHomeScreen = '/ownerHomeScreen';
   static const vendorProfile = '/vendorProfile';
   static const checkAvailability = '/CheckAvailability';
+  static const notificationScreen = '/notificationScreen';
+  // static const checkAvailability = '/CheckAvailability';
+  // static const checkAvailability = '/CheckAvailability';
+  // static const checkAvailability = '/CheckAvailability';
+  // static const checkAvailability = '/CheckAvailability';
+  // static const checkAvailability = '/CheckAvailability';
 }

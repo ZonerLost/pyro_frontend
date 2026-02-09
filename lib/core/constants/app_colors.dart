@@ -10,6 +10,7 @@ class AppColors {
   static const maincolor5 = Color(0xFF34A853);
   static const black = Color(0xFF000000);
   static const white = Color(0xFFFFFFFF);
+  static const bottombarIcon = Color(0xFF00A69F);
   static const grey = Color(0xFF757575);
 
   static const scaffoldBackgroundColor = Color(0xFFF9F9F9);

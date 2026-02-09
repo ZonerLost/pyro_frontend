@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pyroapp/core/constants/app_dimensions.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/models/booking_models.dart';
 import 'package:pyroapp/features/owners/vendorprofile/vendorprofile/models/vendor_profile_model.dart';
 
@@ -25,19 +27,33 @@ class ScheduleBookingController extends GetxController {
   final TextEditingController expiryCtrl = TextEditingController();
   final TextEditingController cvvCtrl = TextEditingController();
 
-  List<PaymentMethod> get paymentMethods => const [
+  List<PaymentMethod> get paymentMethods => [
     PaymentMethod(
       id: 'card',
       title: 'Debit/Credit Card',
-      icon: Icons.credit_card,
+      icon: Image.asset(
+        ImageStrings.visadebitlogo,
+        height: AppDimensions.height20,
+      ),
     ),
-    PaymentMethod(id: 'applepay', title: 'Apple Pay', icon: Icons.apple),
+    PaymentMethod(
+      id: 'applepay',
+      title: 'Apple Pay',
+      icon: Image.asset(ImageStrings.applelogo, height: AppDimensions.height20),
+    ),
     PaymentMethod(
       id: 'googlepay',
       title: 'Google Pay',
-      icon: Icons.g_mobiledata,
+      icon: Image.asset(
+        ImageStrings.googlelogo,
+        height: AppDimensions.height20,
+      ),
     ),
-    PaymentMethod(id: 'amex', title: 'American Express', icon: Icons.payment),
+    PaymentMethod(
+      id: 'amex',
+      title: 'American Express',
+      icon: Image.asset(ImageStrings.amexlogo, height: AppDimensions.height20),
+    ),
   ];
 
   List<String> get timeSlots => const [
@@ -58,7 +74,7 @@ class ScheduleBookingController extends GetxController {
     ServiceCategory? category,
   }) {
     final advancePayment = service.price * 0.5;
-    
+
     booking.value = BookingRequest(
       vendorId: vendor.id,
       vendorOwnerName: vendor.ownerName,

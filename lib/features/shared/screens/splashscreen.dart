@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
+import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/routes/route_names.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
@@ -22,13 +23,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    print(ImageStrings.applogopng);
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
-              child: Center(child: Image.asset(ImageStrings.applogopng)),
+              child: Center(
+                child: Image.asset(
+                  ImageStrings.applogopng,
+                  height: AppDimensions.screenHeight * 0.12,
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 24),

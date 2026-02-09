@@ -36,7 +36,6 @@ class VendorProfileScreen extends StatelessWidget {
           children: [
             ProfileHeader(vendor: vendor),
             ProfileTabs(controller: controller),
-            const Divider(height: 1),
             Expanded(
               child: Obx(() {
                 switch (controller.selectedTab.value) {

@@ -32,14 +32,11 @@ class InfoCard extends StatelessWidget {
               title,
               style: AppTextStyles.bodyMedium.copyWith(
                 color: AppColors.black,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
               ),
             ),
 
-            // 🔥 reduce this, this is what was visually wrong
             const SizedBox(height: 6),
-
-            // content without extra padding
             child,
           ],
         ),

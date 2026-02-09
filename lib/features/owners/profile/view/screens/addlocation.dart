@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/app_strings.dart';
+import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/constants/textstyles.dart';
 import 'package:pyroapp/features/owners/profile/controller/userprofile_controller.dart';
 import 'package:pyroapp/features/owners/profile/models/base_models.dart';
@@ -26,18 +27,14 @@ class AddLocationScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   CircleAvatar(
-                    radius: AppDimensions.screenHeight * 0.06,
+                    radius: AppDimensions.height50,
                     backgroundColor: AppColors.white,
-                    backgroundImage: profile.profilePicture != null
-                        ? NetworkImage(profile.profilePicture!)
-                        : null,
-                    child: profile.profilePicture == null
-                        ? Icon(
-                            Icons.location_pin,
-                            size: AppDimensions.screenHeight * 0.05,
-                            color: AppColors.secondary,
-                          )
-                        : null,
+                    child: Center(
+                      child: Image.asset(
+                        ImageStrings.locationpin,
+                        height: AppDimensions.height50,
+                      ),
+                    ),
                   ),
                   SizedBox(height: AppDimensions.height15),
                   medium(AppStrings.addLocations, fontWeight: FontWeight.w600),

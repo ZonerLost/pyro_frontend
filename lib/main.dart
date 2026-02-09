@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Pyro App',
       theme: AppTheme.lightTheme,
       getPages: AppPages.routes,
-      initialRoute: AppRoutes.ownerBottomNavigation,
-      // home: const GetStartedScreen(),
+      initialRoute: AppRoutes.splash,
     );
   }
 }

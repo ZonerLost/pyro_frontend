@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_strings.dart';
 import 'package:pyroapp/core/constants/textstyles.dart';
+import 'package:pyroapp/core/routes/route_names.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/features/owners/profile/controller/userprofile_controller.dart';
 import 'package:pyroapp/features/owners/profile/view/screens/addlocation.dart';
@@ -30,9 +31,11 @@ class CompleteProfileScreen extends StatelessWidget {
             title: AppStrings.completeyourprofile,
             actions: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  navigateTo(AppRoutes.ownerBottomNavigation);
+                },
                 child: small(
-                  "Skip",
+                  AppStrings.skip,
                   color: AppColors.primary,
                   fontWeight: FontWeight.w600,
                 ),
