@@ -44,7 +44,7 @@ class MainElevatedButton extends StatelessWidget {
               padding ??
               const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 12),
+            borderRadius: BorderRadius.circular(borderRadius ?? 16),
           ),
         ),
         onPressed: onPressed,

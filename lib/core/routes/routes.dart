@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:pyroapp/core/routes/route_names.dart';
-import 'package:pyroapp/features/notification/views/screens/notifications_screen.dart';
 import 'package:pyroapp/features/owners/auth/view/screens/authenticate.dart';
 import 'package:pyroapp/features/owners/auth/view/screens/getstarted.dart';
 import 'package:pyroapp/features/owners/auth/view/screens/login/forgetpassword.dart';
@@ -12,6 +11,7 @@ import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
 import 'package:pyroapp/features/owners/profile/view/screens/completeprofile.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/screens/check_availability_screen.dart';
 import 'package:pyroapp/features/owners/vendorprofile/vendorprofile/views/screens/vendorprofile.dart';
+import 'package:pyroapp/features/shared/notification/views/screens/notifications_screen.dart';
 import 'package:pyroapp/features/shared/screens/language_screen.dart';
 import 'package:pyroapp/features/shared/screens/splashscreen.dart';
 

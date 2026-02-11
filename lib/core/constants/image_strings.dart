@@ -29,5 +29,27 @@ class ImageStrings {
   static const locationpin = 'assets/icons/locationpin.png';
   static const speaker = 'assets/icons/speaker.png';
   static const send = 'assets/icons/send.png';
+  static const logoutImage = 'assets/images/logoutimage.png';
+  static const messagesIcon = 'assets/icons/messages.png';
+
+  static const login = 'assets/icons/login.png';
+  static const info = 'assets/icons/info.png';
+  static const global = 'assets/icons/global.png';
+  static const lifebuoy = 'assets/icons/lifebuoy.png';
+  static const termsndconditions = 'assets/icons/termsndconditions.png';
+  static const settingsIcon = 'assets/icons/settingsIcon.png';
+  static const people = 'assets/icons/people.png';
+  static const key = 'assets/icons/key.png';
+  static const faceid = 'assets/icons/faceid.png';
+  static const wallet = 'assets/icons/wallet.png';
+
+  // static const key = 'assets/icons/key.png';
+  // static const key = 'assets/icons/key.png';
+  // static const notificationbell = 'assets/images/notificationbell.png';
+  // static const notificationbell = 'assets/images/notificationbell.png';
+  // static const notificationbell = 'assets/images/notificationbell.png';
+  // static const notificationbell = 'assets/images/notificationbell.png';
+  // static const notificationbell = 'assets/images/notificationbell.png';
+  // static const notificationbell = 'assets/images/notificationbell.png';
   // static const notificationbell = 'assets/images/notificationbell.png';
 }

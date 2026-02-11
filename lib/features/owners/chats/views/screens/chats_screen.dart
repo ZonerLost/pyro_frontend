@@ -6,7 +6,7 @@ import 'package:pyroapp/core/theme/app_text_styles.dart';
 
 import '../../controller/chats_controller.dart';
 import '../widgets/chat_list_tile.dart';
-import '../widgets/chat_search_bar.dart';
+import '../../../../shared/widgets/customsearchbar.dart';
 import 'chat_room_screen.dart';
 
 class ChatsScreen extends StatelessWidget {
@@ -35,15 +35,15 @@ class ChatsScreen extends StatelessWidget {
                     'Chats',
                     style: AppTextStyles.bodyLarge.copyWith(
                       color: AppColors.black,
-                      fontSize: AppDimensions.screenHeight * 0.027,
-                      fontWeight: FontWeight.w500,
+                      fontSize: AppDimensions.screenHeight * 0.024,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
 
                 SizedBox(height: AppDimensions.height15),
 
-                ChatSearchBar(
+                CustomSearchBar(
                   controller: c.searchCtrl,
                   hint: 'Search technician...',
                   onChanged: c.onSearchChanged,

@@ -13,7 +13,7 @@ class ProfileDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ProfileController>(
+    return GetBuilder<ProfileFormController>(
       builder: (controller) => Padding(
         padding: EdgeInsets.symmetric(horizontal: AppDimensions.paddingMedium),
         child: Column(

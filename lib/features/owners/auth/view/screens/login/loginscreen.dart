@@ -23,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = Get.height;
     return GetBuilder(
       init: OwnerAuthController(),
       builder: (controller) => Scaffold(
@@ -118,7 +117,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     MainElevatedButton(
                       title: AppStrings.continuee,
                       onPressed: () {
-                        controller.login();
+                        navigateToReplacement(AppRoutes.ownerBottomNavigation);
+                        // controller.login();
                         print("Onpressed click continue");
                         // controller.validateAllFields();
                         // if (controller.canSubmit) {

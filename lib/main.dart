@@ -6,6 +6,7 @@ import 'package:pyroapp/core/theme/app_theme.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   AppTextStyles.init(AppTheme.lightTheme.textTheme);
   runApp(const MyApp());
 }

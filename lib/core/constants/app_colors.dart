@@ -19,5 +19,15 @@ class AppColors {
   static const secondarySoftColor = Color.fromARGB(47, 26, 166, 131);
   static const greenSoftColor = Color.fromARGB(255, 207, 229, 213);
   static const blueSoftColor = Color.fromARGB(255, 225, 243, 255);
+
+  static const card = Color(0xFFFFFFFF);
+  static const border = Color(0xFFEAEAEA);
+  static const muted = Color(0xFFF3F4F6);
+
+  static const success = Color(0xFF16A34A);
+  static const danger = Color(0xFFDC2626);
+  static const warning = Color(0xFFF59E0B);
+
+  static const shadow = Color(0x14000000);
   // static const orangeOtpSoftColor =  Color.fromARGB(255, 255, 193, 121);
 }

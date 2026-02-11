@@ -16,7 +16,7 @@ class AddLocationScreen extends StatelessWidget {
   final Profile profile;
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ProfileController>(
+    return GetBuilder<ProfileFormController>(
       builder: (controller) => Padding(
         padding: EdgeInsets.symmetric(horizontal: AppDimensions.paddingMedium),
         child: Column(

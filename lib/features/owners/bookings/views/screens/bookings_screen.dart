@@ -19,95 +19,109 @@ class BookingsScreen extends StatelessWidget {
     final bottomSpace =
         AppDimensions.height10 + MediaQuery.of(context).padding.bottom;
 
-    return Scaffold(
-      extendBody: false,
-      backgroundColor: AppColors.white,
-      appBar: AppBar(
-        elevation: 0,
+    return SafeArea(
+      child: Scaffold(
+        extendBody: false,
         backgroundColor: AppColors.white,
-        title: Text(
-          AppStrings.bookings,
-          style: AppTextStyles.bodyMedium.copyWith(
-            color: AppColors.black,
-            fontWeight: FontWeight.w700,
-            fontSize: AppDimensions.font18,
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: AppDimensions.paddingMedium),
-            child: CircleAvatar(
-              backgroundColor: AppColors.primarySoftColor,
-              child: Icon(Icons.calendar_month, color: AppColors.primary),
-            ),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          const BookingTabs(),
-          SizedBox(height: AppDimensions.height10),
-          Expanded(
-            child: Obx(() {
-              if (c.isLoading.value) {
-                return const Center(child: CircularProgressIndicator());
-              }
-              if (c.error.value.isNotEmpty) {
-                return Center(child: Text(c.error.value));
-              }
-
-              final list = c.filtered;
-              if (list.isEmpty) {
-                return Center(
-                  child: Text(
-                    AppStrings.nobookingsfound,
-                    style: AppTextStyles.bodySmall.copyWith(
-                      color: AppColors.grey,
+        body: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: AppDimensions.paddingMedium,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Bookings',
+                      style: AppTextStyles.bodyLarge.copyWith(
+                        color: AppColors.black,
+                        fontSize: AppDimensions.screenHeight * 0.024,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                        right: AppDimensions.paddingMedium,
+                      ),
+                      child: CircleAvatar(
+                        backgroundColor: AppColors.primarySoftColor,
+                        child: Icon(
+                          Icons.calendar_month,
+                          color: AppColors.primary,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            const BookingTabs(),
+            SizedBox(height: AppDimensions.height10),
+            Expanded(
+              child: Obx(() {
+                if (c.isLoading.value) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                if (c.error.value.isNotEmpty) {
+                  return Center(child: Text(c.error.value));
+                }
+
+                final list = c.filtered;
+                if (list.isEmpty) {
+                  return Center(
+                    child: Text(
+                      AppStrings.nobookingsfound,
+                      style: AppTextStyles.bodySmall.copyWith(
+                        color: AppColors.grey,
+                      ),
+                    ),
+                  );
+                }
+
+                return ListView.builder(
+                  padding: EdgeInsets.fromLTRB(
+                    AppDimensions.paddingMedium,
+                    0,
+                    AppDimensions.paddingMedium,
+                    bottomSpace,
+                  ),
+                  itemCount: list.length,
+                  itemBuilder: (_, i) => Padding(
+                    padding: EdgeInsets.only(bottom: AppDimensions.height15),
+                    child: c.selectedTab.value == BookingsTab.requests
+                        ? BookingCardRequest(
+                            booking: list[i],
+                            onPrimary: () {
+                              Get.to(
+                                () => BookingDetailsScreen(booking: list[i]),
+                              );
+                            },
+                            onSecondary: () {
+                              // Active -> Contact Technician
+                              // Completed -> Leave Review
+                            },
+                          )
+                        : BookingCard(
+                            booking: list[i],
+                            onPrimary: () {
+                              Get.to(
+                                () => BookingDetailsScreen(booking: list[i]),
+                              );
+                            },
+                            onSecondary: () {
+                              // Active -> Contact Technician
+                              // Completed -> Leave Review
+                            },
+                          ),
                   ),
                 );
-              }
-
-              return ListView.builder(
-                padding: EdgeInsets.fromLTRB(
-                  AppDimensions.paddingMedium,
-                  0,
-                  AppDimensions.paddingMedium,
-                  bottomSpace,
-                ),
-                itemCount: list.length,
-                itemBuilder: (_, i) => Padding(
-                  padding: EdgeInsets.only(bottom: AppDimensions.height15),
-                  child: c.selectedTab.value == BookingsTab.requests
-                      ? BookingCardRequest(
-                          booking: list[i],
-                          onPrimary: () {
-                            Get.to(
-                              () => BookingDetailsScreen(booking: list[i]),
-                            );
-                          },
-                          onSecondary: () {
-                            // Active -> Contact Technician
-                            // Completed -> Leave Review
-                          },
-                        )
-                      : BookingCard(
-                          booking: list[i],
-                          onPrimary: () {
-                            Get.to(
-                              () => BookingDetailsScreen(booking: list[i]),
-                            );
-                          },
-                          onSecondary: () {
-                            // Active -> Contact Technician
-                            // Completed -> Leave Review
-                          },
-                        ),
-                ),
-              );
-            }),
-          ),
-        ],
+              }),
+            ),
+          ],
+        ),
       ),
     );
   }

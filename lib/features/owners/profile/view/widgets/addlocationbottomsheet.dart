@@ -14,7 +14,7 @@ class AddLocationBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ProfileController>(
+    return GetBuilder<ProfileFormController>(
       builder: (controller) => SafeArea(
         child: SingleChildScrollView(
           child: Padding(

@@ -3,12 +3,12 @@ import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 
-class ChatSearchBar extends StatelessWidget {
+class CustomSearchBar extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
   final ValueChanged<String> onChanged;
 
-  const ChatSearchBar({
+  const CustomSearchBar({
     super.key,
     required this.controller,
     required this.hint,

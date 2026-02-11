@@ -4,10 +4,11 @@ import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/features/owners/bookings/views/screens/bookings_screen.dart';
-import 'package:pyroapp/features/notification/views/screens/notifications_screen.dart';
 import 'package:pyroapp/features/owners/bottomnavigation/controller/bottomnav_controller.dart';
 import 'package:pyroapp/features/owners/chats/views/screens/chats_screen.dart';
+import 'package:pyroapp/features/owners/devices/views/screens/devices_screen.dart';
 import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
+import 'package:pyroapp/features/shared/profile/views/screens/profile_view.dart';
 
 class OwnerBottomNavigation extends StatefulWidget {
   const OwnerBottomNavigation({super.key});
@@ -23,10 +24,10 @@ class _BottomNavigationBState extends State<OwnerBottomNavigation> {
 
   final List<Widget> _children = [
     const OwnerHomeScreen(),
-    const OwnerHomeScreen(),
+    const DevicesScreen(),
     const BookingsScreen(),
     const ChatsScreen(),
-    OwnerHomeScreen(),
+    ProfileView(),
   ];
 
   void _onItemTapped(int index) {
@@ -128,7 +129,7 @@ class _BottomNavigationBState extends State<OwnerBottomNavigation> {
                         radius: AppDimensions.radius12,
                         backgroundColor: Colors.grey.shade300,
                         backgroundImage: NetworkImage(
-                          'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg',
+                          'https://i.pravatar.cc/150?img=15',
                         ),
                       ),
                       label: 'Profile',

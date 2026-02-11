@@ -140,7 +140,7 @@ class LanguageCard extends StatelessWidget {
                   title,
                   style: Theme.of(
                     context,
-                  ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w600),
+                  ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w800),
                 ),
               ),
               isSelected

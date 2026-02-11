@@ -17,7 +17,7 @@ class ProfileData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<ProfileController>(
+    return GetBuilder<ProfileFormController>(
       builder: (controller) => SingleChildScrollView(
         padding: EdgeInsets.all(AppDimensions.paddingMedium),
         child: Column(

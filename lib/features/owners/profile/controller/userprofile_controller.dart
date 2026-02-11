@@ -2,7 +2,7 @@
 import 'package:get/get.dart';
 import 'package:pyroapp/features/owners/profile/models/base_models.dart';
 
-class ProfileController extends GetxController {
+class ProfileFormController extends GetxController {
   Rx<Profile> profile = Profile(fullName: '', phoneNumber: '', address: '').obs;
   RxInt selectedIndex = 0.obs;
 

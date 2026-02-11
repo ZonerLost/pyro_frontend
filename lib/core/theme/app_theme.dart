@@ -7,34 +7,37 @@ class AppTheme {
     useMaterial3: true,
     fontFamily: 'HelveticaNowDisplay',
     scaffoldBackgroundColor: const Color(0xFFF9F9F9),
+    canvasColor: const Color(0xFFF9F9F9),
+    splashColor: Colors.transparent,
+    highlightColor: Colors.transparent,
 
     colorScheme: const ColorScheme.light(
       primary: Color(0xFFFF8C00),
       secondary: Color(0xFF20A39E),
-      surface: Color(0xFFFF8C00),
+      surface: Color(0xFFF9F9F9),
       onPrimary: Color(0xFFFFFFFF),
     ),
 
     textTheme: const TextTheme(
       headlineLarge: TextStyle(
         fontSize: 32,
-        fontWeight: FontWeight.w700,
+        fontWeight: FontWeight.w800,
         color: Color(0xFF212121),
       ),
       headlineMedium: TextStyle(
         fontSize: 24,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         color: Color(0xFF212121),
       ),
       headlineSmall: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         color: Color(0xFF212121),
       ),
 
       bodyLarge: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w400,
         color: Color(0xFF212121),
       ),
       bodyMedium: TextStyle(
@@ -50,7 +53,7 @@ class AppTheme {
 
       labelLarge: TextStyle(
         fontSize: 16,
-        fontWeight: FontWeight.w600,
+        fontWeight: FontWeight.w800,
         color: Colors.white,
       ),
     ),

@@ -14,11 +14,11 @@ import 'package:pyroapp/features/shared/widgets/customappbar.dart';
 
 class CompleteProfileScreen extends StatelessWidget {
   CompleteProfileScreen({super.key});
-  final controller = Get.put(ProfileController());
+  final controller = Get.put(ProfileFormController());
   @override
   Widget build(BuildContext context) {
     return GetBuilder(
-      init: ProfileController(),
+      init: ProfileFormController(),
       builder: (controller) {
         final profile = controller.profile.value;
         return Scaffold(
