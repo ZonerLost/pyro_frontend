@@ -35,32 +35,31 @@ class CustomBottomSheetNotification extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             // Background pill (always same proportion, doesn't depend on sheet height)
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Center(
-                child: Transform.translate(
-                  offset: Offset(0, -peekOffset),
-                  child: Container(
-                    width: pillWidth,
-                    height: pillHeight,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFF9F9F9),
-                      borderRadius: BorderRadius.circular(pillHeight),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 10,
-                          offset: Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
+            // Positioned(
+            //   top: 0,
+            //   left: 0,
+            //   right: 0,
+            //   child: Center(
+            //     child: Transform.translate(
+            //       offset: Offset(0, -peekOffset),
+            //       child: Container(
+            //         width: pillWidth,
+            //         height: pillHeight,
+            //         decoration: BoxDecoration(
+            //           color: const Color(0xFFF9F9F9),
+            //           borderRadius: BorderRadius.circular(pillHeight),
+            //           boxShadow: const [
+            //             BoxShadow(
+            //               color: Colors.black12,
+            //               blurRadius: 10,
+            //               offset: Offset(0, 4),
+            //             ),
+            //           ],
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Container(
               margin: EdgeInsets.only(top: AppDimensions.height30),
               padding: EdgeInsets.all(AppDimensions.paddingMedium),

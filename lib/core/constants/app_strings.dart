@@ -177,10 +177,10 @@ class AppStrings {
   static const logoutSubtitle =
       'Are you sure you want to logout from this app?';
   static const logoutConfirmation = 'Yes, Logout';
-  // static const update = 'Update';
-  // static const update = 'Update';
-  // static const update = 'Update';
-  // static const update = 'Update';
+  static const techgetstartedTitle = 'Work Smarter. Deliver Better Service.';
+  static const techgetstartedSubtitle =
+      'Manage jobs, optimize routes, document services, and collect payments — all from one powerful app.';
+  static const details = 'Details';
   // static const update = 'Update';
   // static const update = 'Update';
 }

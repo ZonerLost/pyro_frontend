@@ -44,7 +44,7 @@ class BookingsScreen extends StatelessWidget {
                     ),
                     Padding(
                       padding: EdgeInsets.only(
-                        right: AppDimensions.paddingMedium,
+                        right: AppDimensions.paddingSmall,
                       ),
                       child: CircleAvatar(
                         backgroundColor: AppColors.primarySoftColor,

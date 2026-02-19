@@ -30,7 +30,7 @@ class GetStartedScreen extends StatelessWidget {
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Colors.transparent, Colors.black87],
+              colors: [Colors.black26, Colors.black],
               stops: [0.15, 0.75],
             ),
           ),

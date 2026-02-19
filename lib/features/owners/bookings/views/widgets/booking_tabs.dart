@@ -24,7 +24,7 @@ class BookingTabs extends StatelessWidget {
                 SizedBox(height: AppDimensions.height10),
                 Text(
                   title,
-                  style: AppTextStyles.bodySmall.copyWith(
+                  style: AppTextStyles.bodyMedium.copyWith(
                     color: active ? AppColors.secondary : AppColors.grey,
                     fontWeight: active ? FontWeight.w700 : FontWeight.w500,
                   ),

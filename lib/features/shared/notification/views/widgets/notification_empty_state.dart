@@ -33,7 +33,7 @@ class NotificationEmptyState extends StatelessWidget {
             Text(
               AppStrings.noNotificationssubtitle,
               textAlign: TextAlign.center,
-              style: AppTextStyles.bodySmall.copyWith(color: AppColors.grey),
+              style: AppTextStyles.bodyMedium.copyWith(color: AppColors.grey),
             ),
           ],
         ),

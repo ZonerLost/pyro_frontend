@@ -43,10 +43,10 @@ class ImageStrings {
   static const faceid = 'assets/icons/faceid.png';
   static const wallet = 'assets/icons/wallet.png';
 
-  // static const key = 'assets/icons/key.png';
-  // static const key = 'assets/icons/key.png';
-  // static const notificationbell = 'assets/images/notificationbell.png';
-  // static const notificationbell = 'assets/images/notificationbell.png';
+  static const inventory = 'assets/icons/inventory.png';
+  static const inventoryfilled = 'assets/icons/inventory_filled.png';
+  static const tgetstarted = 'assets/images/tgetstarted.jpg';
+  static const trashoutlined = 'assets/icons/trash_outlined.png';
   // static const notificationbell = 'assets/images/notificationbell.png';
   // static const notificationbell = 'assets/images/notificationbell.png';
   // static const notificationbell = 'assets/images/notificationbell.png';

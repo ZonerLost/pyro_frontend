@@ -35,7 +35,7 @@ class MainElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: height ?? AppDimensions.screenHeight * 0.08,
+      height: height ?? AppDimensions.screenHeight * 0.06,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           elevation: elevation ?? 0,

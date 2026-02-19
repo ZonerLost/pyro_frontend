@@ -5,10 +5,10 @@ import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/features/owners/bookings/views/screens/bookings_screen.dart';
 import 'package:pyroapp/features/owners/bottomnavigation/controller/bottomnav_controller.dart';
-import 'package:pyroapp/features/owners/chats/views/screens/chats_screen.dart';
+import 'package:pyroapp/features/shared/chats/views/screens/chats_screen.dart';
 import 'package:pyroapp/features/owners/devices/views/screens/devices_screen.dart';
 import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
-import 'package:pyroapp/features/shared/profile/views/screens/profile_view.dart';
+import 'package:pyroapp/features/owners/profile/views/screens/profile_view.dart';
 
 class OwnerBottomNavigation extends StatefulWidget {
   const OwnerBottomNavigation({super.key});
@@ -72,10 +72,10 @@ class _BottomNavigationBState extends State<OwnerBottomNavigation> {
                   elevation: 0,
                   currentIndex: bottomnavbarController.selectedIndex.value,
                   showUnselectedLabels: true,
-                  selectedLabelStyle: Get.textTheme.labelSmall!.copyWith(
+                  selectedLabelStyle: Get.textTheme.labelMedium!.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
-                  unselectedLabelStyle: Get.textTheme.labelSmall,
+                  unselectedLabelStyle: Get.textTheme.labelMedium,
                   selectedItemColor: AppColors.bottombarIcon,
                   unselectedItemColor: Colors.black.withOpacity(0.5),
                   onTap: _onItemTapped,
