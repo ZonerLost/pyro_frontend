@@ -3,7 +3,7 @@ import 'package:pyroapp/core/constants/app_strings.dart';
 import 'package:pyroapp/core/constants/image_strings.dart';
 import 'package:pyroapp/core/routes/route_names.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
-import 'package:pyroapp/features/shared/widgets/custombottomsheet.dart';
+import 'package:pyroapp/features/shared/widgets/custombottomsheetnotification.dart';
 
 class EmailSentConfirmationSheet extends StatelessWidget {
   const EmailSentConfirmationSheet({super.key});

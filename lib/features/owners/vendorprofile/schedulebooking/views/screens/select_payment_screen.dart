@@ -8,7 +8,7 @@ import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/widgets/payment_method_tile.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
-import 'package:pyroapp/features/shared/widgets/custombottomsheet1.dart';
+import 'package:pyroapp/features/shared/widgets/custombottomsheet.dart';
 import '../../controller/schedule_booking_controller.dart';
 import 'card_information_screen.dart';
 

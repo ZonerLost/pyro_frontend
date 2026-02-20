@@ -6,6 +6,7 @@ import 'package:pyroapp/core/constants/app_strings.dart';
 import 'package:pyroapp/core/routes/route_names.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/features/owners/profile/controller/language_controller.dart';
+import 'package:pyroapp/features/shared/screens/switch_roles.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
 import 'package:pyroapp/features/technicians/auth/view/screens/getstarted.dart';
 import '../widgets/app_scaffold.dart';
@@ -80,7 +81,7 @@ class LanguageView extends StatelessWidget {
               MainElevatedButton(
                 title: AppStrings.confirm,
                 onPressed: () {
-                  Get.to(() => TGetStartedScreen());
+                  Get.to(() => SwitchRoleScreen());
                   // navigateToReplacement(AppRoutes.getstarted);
                 },
               ),

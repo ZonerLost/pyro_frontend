@@ -3,16 +3,13 @@ import 'package:get/get.dart';
 import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/image_strings.dart';
-import 'package:pyroapp/features/owners/auth/profile/models/base_models.dart';
-import 'package:pyroapp/features/owners/bookings/views/screens/bookings_screen.dart';
 import 'package:pyroapp/features/owners/bottomnavigation/controller/bottomnav_controller.dart';
 import 'package:pyroapp/features/shared/chats/views/screens/chats_screen.dart';
-import 'package:pyroapp/features/owners/devices/views/screens/devices_screen.dart';
-import 'package:pyroapp/features/owners/profile/views/screens/profile_view.dart';
 import 'package:pyroapp/features/technicians/bookings/view/screens/t_bookings_view.dart';
 import 'package:pyroapp/features/technicians/bottomnavigation/controller/bottomnav_controller.dart';
 import 'package:pyroapp/features/technicians/home/view/screens/tech_home_screen.dart';
 import 'package:pyroapp/features/technicians/inventory/view/screens/t_inventory_view.dart';
+import 'package:pyroapp/features/technicians/profile/views/screens/profile_view.dart';
 
 class TBottomNavigation extends StatefulWidget {
   const TBottomNavigation({super.key});
@@ -31,7 +28,7 @@ class _TBottomNavigationBState extends State<TBottomNavigation> {
     const TBookingsView(),
     const ChatsScreen(),
     const TInventoryView(),
-    ProfileView(),
+    TProfileView(),
   ];
 
   void _onItemTapped(int index) {

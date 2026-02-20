@@ -7,8 +7,8 @@ import 'package:pyroapp/core/routes/route_names.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
 import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
+import 'package:pyroapp/features/shared/widgets/custombottomsheetnotification.dart';
 import 'package:pyroapp/features/shared/widgets/custombottomsheet.dart';
-import 'package:pyroapp/features/shared/widgets/custombottomsheet1.dart';
 
 class DeleteAccountBottomSheet extends StatelessWidget {
   const DeleteAccountBottomSheet({super.key});
@@ -50,7 +50,7 @@ class DeleteAccountBottomSheet extends StatelessWidget {
             MainElevatedButton(
               title: AppStrings.deleteAccount,
               onPressed: () {
-                navigateTo(AppRoutes.completeProfileScreen);
+                // navigateTo(AppRoutes.completeProfileScreen);
               },
             ),
           ],

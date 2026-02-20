@@ -10,7 +10,7 @@ import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/widg
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/widgets/time_slots.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/widgets/upload_images_tile.dart';
 import 'package:pyroapp/features/shared/widgets/customappbar.dart';
-import 'package:pyroapp/features/shared/widgets/custombottomsheet1.dart';
+import 'package:pyroapp/features/shared/widgets/custombottomsheet.dart';
 
 import '../../controller/schedule_booking_controller.dart';
 import 'select_payment_screen.dart';

@@ -29,7 +29,7 @@ class SettingsTile extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: AppDimensions.paddingMedium,
-          vertical: AppDimensions.height15,
+          vertical: AppDimensions.height10,
         ),
         decoration: BoxDecoration(
           color: AppColors.white,

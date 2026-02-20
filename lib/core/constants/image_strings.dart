@@ -47,8 +47,8 @@ class ImageStrings {
   static const inventoryfilled = 'assets/icons/inventory_filled.png';
   static const tgetstarted = 'assets/images/tgetstarted.jpg';
   static const trashoutlined = 'assets/icons/trash_outlined.png';
-  // static const notificationbell = 'assets/images/notificationbell.png';
-  // static const notificationbell = 'assets/images/notificationbell.png';
+  static const crown = 'assets/icons/crown.png';
+  static const visacard = 'assets/images/visacard.png';
   // static const notificationbell = 'assets/images/notificationbell.png';
   // static const notificationbell = 'assets/images/notificationbell.png';
   // static const notificationbell = 'assets/images/notificationbell.png';

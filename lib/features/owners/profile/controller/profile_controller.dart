@@ -9,7 +9,7 @@ import 'package:pyroapp/features/owners/profile/views/screens/terms_conditions_v
 import 'package:pyroapp/features/owners/profile/views/widgets/confirm_sheet.dart';
 import 'package:pyroapp/features/owners/profile/views/widgets/deleteaccount_bottomsheet.dart';
 import 'package:pyroapp/features/owners/profile/views/widgets/logout_bottomsheet.dart';
-import 'package:pyroapp/features/shared/widgets/custombottomsheet1.dart';
+import 'package:pyroapp/features/shared/widgets/custombottomsheet.dart';
 import '../models/app_user.dart';
 
 class ProfileController extends GetxController {

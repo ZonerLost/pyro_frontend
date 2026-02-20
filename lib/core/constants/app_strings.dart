@@ -181,6 +181,32 @@ class AppStrings {
   static const techgetstartedSubtitle =
       'Manage jobs, optimize routes, document services, and collect payments — all from one powerful app.';
   static const details = 'Details';
+  static const wallet = 'Wallet';
+  static const sendReminder = 'Send Reminder';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
+  // static const update = 'Update';
   // static const update = 'Update';
   // static const update = 'Update';
 }

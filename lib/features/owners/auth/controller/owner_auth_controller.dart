@@ -120,7 +120,6 @@ class OwnerAuthController extends GetxController {
   Future<void> verifyOtp(String otp) async {
     _setLoading(true);
     try {
-      await Future.delayed(const Duration(seconds: 2));
       Get.bottomSheet(isScrollControlled: true, AccountCreatedBottomSheet());
     } catch (_) {
       Get.snackbar('Error', 'OTP verification failed');

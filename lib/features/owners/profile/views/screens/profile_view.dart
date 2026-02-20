@@ -140,7 +140,7 @@ class ProfileView extends StatelessWidget {
                     onTap: controller.openTerms,
                   ),
                   SettingsTile(
-                    icon: ImageStrings.trash,
+                    icon: ImageStrings.trashoutlined,
                     title: AppStrings.deleteAccount,
                     iconBg: AppColors.softButtonColor,
                     onTap: controller.confirmDeleteAccount,

@@ -4,6 +4,7 @@ import 'package:pyroapp/core/constants/app_colors.dart';
 import 'package:pyroapp/core/constants/app_dimensions.dart';
 import 'package:pyroapp/core/constants/app_strings.dart';
 import 'package:pyroapp/core/theme/app_text_styles.dart';
+import 'package:pyroapp/core/utils/navigation.dart';
 import 'package:pyroapp/features/owners/auth/controller/owner_auth_controller.dart';
 import 'package:pyroapp/features/shared/widgets/buttons.dart';
 import 'package:pyroapp/features/shared/widgets/customappbar.dart';
@@ -76,11 +77,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 child: MainElevatedButton(
                   title: AppStrings.confirm,
                   onPressed: () {
-                    Get.bottomSheet(
-                      isScrollControlled: true,
-                      backgroundColor: Colors.transparent,
-                      EmailSentConfirmationSheet(),
-                    );
+                    navigateBack();
                   },
                 ),
               ),

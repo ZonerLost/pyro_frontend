@@ -4,10 +4,11 @@ enum PolicyType { privacy, terms }
 
 class PolicyController extends GetxController {
   final PolicyType type;
-  
+
   PolicyController(this.type);
 
-  String get title => type == PolicyType.privacy ? 'Privacy Policy' : 'Terms & Conditions';
+  String get title =>
+      type == PolicyType.privacy ? 'Privacy Policy' : 'Terms & Conditions';
 
   final String lorem =
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\n'

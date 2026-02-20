@@ -8,7 +8,7 @@ import 'package:pyroapp/features/owners/auth/view/screens/login/resetpassword.da
 import 'package:pyroapp/features/owners/auth/view/screens/register/verificationcode.dart';
 import 'package:pyroapp/features/owners/bottomnavigation/view/bottomnavigation.dart';
 import 'package:pyroapp/features/owners/home/view/screen/homescreen.dart';
-import 'package:pyroapp/features/owners/auth/profile/view/screens/completeprofile.dart';
+import 'package:pyroapp/features/owners/auth/view/screens/profile/view/screens/completeprofile.dart';
 import 'package:pyroapp/features/owners/vendorprofile/schedulebooking/views/screens/check_availability_screen.dart';
 import 'package:pyroapp/features/owners/vendorprofile/vendorprofile/views/screens/vendorprofile.dart';
 import 'package:pyroapp/features/shared/notification/views/screens/notifications_screen.dart';
